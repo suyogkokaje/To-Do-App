@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 import 'package:todo/app/core/utils/extensions.dart';
 import 'package:todo/app/modules/details/widgets/doing_list.dart';
+import 'package:todo/app/modules/details/widgets/done_list.dart';
 
 import '../home/controller.dart';
 
@@ -97,7 +96,7 @@ class DetailsPage extends StatelessWidget {
                               Colors.grey.shade300,
                               Colors.grey.shade300,
                             ],
-                          ),
+                            ),
                         ),
                       ),
                     ],
@@ -144,7 +143,8 @@ class DetailsPage extends StatelessWidget {
                 },
               ),
             ),
-            DoingList(task: task),
+            DoingList(),
+            DoneList(),
           ],
         ),
       ),

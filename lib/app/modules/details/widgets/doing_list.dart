@@ -1,19 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:todo/app/core/utils/extensions.dart';
-
-import '../../../data/models/task.dart';
 import '../../home/controller.dart';
 
 class DoingList extends StatelessWidget {
   final homeCtrl = Get.find<HomeController>();
-  final Task task;
-  DoingList({Key? key, required this.task}) : super(key: key);
+  DoingList({Key? key}) : super(key: key);
   // DoingList({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final color = HexColor.fromHex(task.color);
     return Obx(
       () => homeCtrl.doingTodos.isEmpty && homeCtrl.doingTodos.isEmpty
           ? Column(
@@ -26,7 +22,6 @@ class DoingList extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 40.0.sp,
                         fontWeight: FontWeight.bold,
-                        color: color,
                       ),
                     ),
                   ),
